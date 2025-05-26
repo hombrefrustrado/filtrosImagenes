@@ -68,7 +68,7 @@ while(True):
         case 0:
             break
         case 1:
-            imagen = ponerArchivo
+            imagen = ponerArchivo()
         case 2:
             guardarImagen(imagen_editada)
         case 3:
@@ -127,7 +127,6 @@ while(True):
         case 17:
             kernel = int(input("Introduzca el tamaño del kernel del desenfoque: "))
             imagen_editada=ti.aplicar_desenfoque(imagen,tamano_kernel=kernel)
-            Image.fromarray(imagen_editada).show(title="Kernel.jpg")
         case _:
             print("boton no definido, pruebe de nuevo\n")
     limpiar_terminal()
