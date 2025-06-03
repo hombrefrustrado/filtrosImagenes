@@ -68,7 +68,7 @@ while(True):
         case 0:
             break
         case 1:
-            imagen = ponerArchivo
+            imagen = ponerArchivo()
         case 2:
             guardarImagen(imagen_editada)
         case 3:
