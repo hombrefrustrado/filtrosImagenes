@@ -108,3 +108,8 @@ def detectar_bordes(imagen_array):
 
 
     return bordes
+def contraste(imagen_array, factor=1):
+    img = imagen_array.astype(np.float32) / 255.0
+    nueva_imagen = img ** factor
+    nueva_imagen = (nueva_imagen * 255).clip(0, 255).astype(np.uint8)
+    return  nueva_imagen

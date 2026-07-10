@@ -60,6 +60,7 @@ while(True):
             "15 - Detectar bordes\n"
             "16 - eliminar el color que quieras\n"
             "17 - desenfoque con kernel personalizado\n"
+            "18 - Aplicar contraste mejorado\n"
             "Boton: "
         )
     )
@@ -128,6 +129,13 @@ while(True):
             kernel = int(input("Introduzca el tamaño del kernel del desenfoque: "))
             imagen_editada=ti.aplicar_desenfoque(imagen,tamano_kernel=kernel)
             Image.fromarray(imagen_editada).show(title="Kernel.jpg")
+        case 18:
+            constraste:float = float(input("Introduzca el contraste deseado un número mayor que 0: "))
+            if(constraste<0):
+                print("Ese valor no es valido")
+                continue
+            imagen_editada = ti.contraste(imagen, constraste)
+            Image.fromarray(imagen_editada).show(title="Contrastada lol.jpg")
         case _:
             print("boton no definido, pruebe de nuevo\n")
     limpiar_terminal()
